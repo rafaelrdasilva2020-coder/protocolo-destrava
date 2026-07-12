@@ -137,6 +137,8 @@
             width: 100%;
             display: block;
             background: #000;
+            position: relative;
+            z-index: 1;
         }
         .vsl-unmute {
             position: absolute;
@@ -170,22 +172,28 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: rgba(245, 158, 11, 0.95);
+            background: rgba(245, 158, 11, 0.98);
             color: #1a1a1a;
-            font-size: 1.6rem;
-            border: none;
+            font-size: 1.8rem;
+            border: 4px solid #fff;
             cursor: pointer;
-            z-index: 4;
+            z-index: 10;
             display: none;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            animation: vslPulse 1.5s infinite;
         }
         .vsl-play-fallback.show {
             display: flex;
+        }
+        @keyframes vslPulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+            70% { box-shadow: 0 0 0 20px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
         }
 
         /* PAIN POINTS SECTION */
@@ -1349,6 +1357,13 @@ fbq('track', 'PageView');
                     playFallback.classList.add('show');
                 });
             }
+            // Segurança extra: se depois de 1.5s o vídeo continuar pausado
+            // (mesmo sem erro explícito), mostra o botão de play mesmo assim.
+            setTimeout(function() {
+                if (video.paused) {
+                    playFallback.classList.add('show');
+                }
+            }, 1500);
             playFallback.addEventListener('click', function() {
                 video.play();
                 playFallback.classList.remove('show');
