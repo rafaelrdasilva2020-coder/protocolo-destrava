@@ -1351,25 +1351,28 @@ fbq('track', 'PageView');
             });
 
             // Tenta tocar; se o navegador bloquear o autoplay, mostra botão de play manual.
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(function() {
-                    playFallback.classList.add('show');
-                });
-            }
-            // Segurança extra: se depois de 1.5s o vídeo continuar pausado
-            // (mesmo sem erro explícito), mostra o botão de play mesmo assim.
-            setTimeout(function() {
+            video.play().catch(function() {});
+
+            // Lógica robusta: o botão de play aparece sempre que o vídeo estiver
+            // pausado (por qualquer motivo), e some assim que ele começa a tocar.
+            function checkPaused() {
                 if (video.paused) {
                     playFallback.classList.add('show');
+                } else {
+                    playFallback.classList.remove('show');
                 }
-            }, 1500);
+            }
+            video.addEventListener('pause', checkPaused);
+            video.addEventListener('play', checkPaused);
+            video.addEventListener('playing', checkPaused);
+            video.addEventListener('canplay', checkPaused);
+            setTimeout(checkPaused, 600);
+            setTimeout(checkPaused, 2000);
+
             playFallback.addEventListener('click', function() {
+                video.muted = false;
+                unmuteBtn.textContent = '🔊 Som ativado';
                 video.play();
-                playFallback.classList.remove('show');
-            });
-            video.addEventListener('playing', function() {
-                playFallback.classList.remove('show');
             });
 
             // Impede avançar (seek para frente); rebobinar é permitido.
