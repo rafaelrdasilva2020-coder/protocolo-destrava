@@ -85,6 +85,20 @@
             line-height: 1.8;
         }
 
+        .hero-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .hero-checklist li {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
         .hero-cta-wrap {
             margin-top: 22px;
         }
@@ -216,6 +230,17 @@
             color: #1a1a1a;
         }
 
+        .section-title.tight {
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.15rem;
+            margin-bottom: 50px;
+        }
+
         .pain-points-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -299,6 +324,52 @@
             color: #10b981;
             font-weight: bold;
             font-size: 1.3rem;
+        }
+
+        /* RESULTS SECTION */
+        .results-section {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .result-card {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .result-icon {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .result-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .result-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .ps-list-white li {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .ps-list-white li::before {
+            color: #ffffff;
         }
 
         /* MODULES SECTION */
@@ -671,6 +742,29 @@
             font-style: italic;
         }
 
+        .post-cta-guarantee {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .post-cta-guarantee strong {
+            display: block;
+            color: #10b981;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .post-cta-guarantee p {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
         /* PREÇO */
         .price-display {
             margin: 30px 0;
@@ -956,7 +1050,7 @@ fbq('track', 'PageView');
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Destrave seu metabolismo em <span class="highlight">21 a 30 dias</span></h1>
+                    <h1>Conquiste o Corpo dos Seus Sonhos em <span class="highlight">21 Dias</span></h1>
                 </div>
                 <div class="hero-image">
                     <div class="vsl-wrapper">
@@ -969,7 +1063,12 @@ fbq('track', 'PageView');
                     </div>
                 </div>
                 <div class="hero-text">
-                    <p>Sem dietas restritivas, sem contar calorias. O método completo para reverter a adaptação metabólica e finalmente sair do platô.</p>
+                    <p>O Método que Destrava Seu Metabolismo Sem Dietas Restritivas. Emagreça de forma rápida, saudável e sustentável.</p>
+                    <ul class="hero-checklist">
+                        <li>✓ Acesso imediato após a confirmação</li>
+                        <li>✓ Suporte 24/7 da comunidade exclusiva</li>
+                        <li>✓ Garantia de 7 dias sem risco</li>
+                    </ul>
                     <div class="hero-cta-wrap">
                         <a href="#oferta" class="cta-button" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); return false;">Quero Destravar Meu Metabolismo Agora</a>
                     </div>
@@ -981,19 +1080,32 @@ fbq('track', 'PageView');
     <!-- PAIN POINTS -->
     <section class="pain-points">
         <div class="container">
-            <h2 class="section-title">Você já passou por isso?</h2>
+            <h2 class="section-title tight">Você se Identifica com Alguma Dessas Situações?</h2>
+            <p class="section-subtitle">Você não está sozinha. Milhares de mulheres enfrentam os mesmos desafios.</p>
             <div class="pain-points-grid">
                 <div class="pain-card">
-                    <h3>Platô que não sai</h3>
-                    <p>Fez dieta, perdeu peso, mas depois de um tempo a balança não mexe mais. Seu corpo simplesmente travou.</p>
+                    <h3>Tentou de tudo e não emagreceu?</h3>
+                    <p>Dietas restritivas, academia, suplementos caros... nada funcionou. A frustração é real.</p>
                 </div>
                 <div class="pain-card">
-                    <h3>Ciclo de restrição</h3>
-                    <p>Cada dieta mais restritiva que a anterior. Cada vez mais difícil manter. Cada vez mais perto do abandono.</p>
+                    <h3>Cansada do efeito sanfona?</h3>
+                    <p>Emagrece, depois volta tudo. Esse ciclo interminável destrói sua autoestima.</p>
                 </div>
                 <div class="pain-card">
-                    <h3>Sanfona constante</h3>
-                    <p>Perde peso, volta a ganhar. Perde novamente, ganha de novo. Um ciclo que parece não ter fim.</p>
+                    <h3>Falta de energia e disposição?</h3>
+                    <p>Você acorda sem vontade, sente o corpo pesado e o espelho se tornou seu inimigo.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Desânimo e falta de motivação?</h3>
+                    <p>Tentou tantas vezes que agora não acredita mais que é possível mudar.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Seu metabolismo parece travado?</h3>
+                    <p>Mesmo fazendo tudo certo, a balança não se move. Seu corpo parece resistir ao emagrecimento.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Ansiedade e fome o tempo todo?</h3>
+                    <p>A vontade de comer doces e beliscar faz você abandonar a dieta antes de ver resultados.</p>
                 </div>
             </div>
         </div>
@@ -1023,23 +1135,21 @@ fbq('track', 'PageView');
         <div class="container">
             <div class="ps-content">
                 <div class="ps-text">
-                    <h2>Por que seu corpo <span class="highlight">travou de verdade</span></h2>
-                    <p>Não é falta de esforço. Não é genética. Seu corpo aprendeu, ao longo de dietas repetidas, a economizar energia como forma de proteção.</p>
-                    <p>Isso se chama <strong>adaptação metabólica</strong> — e é completamente reversível.</p>
-                    <p>O Protocolo Destrava não é mais uma dieta restritiva. É a estratégia científica para dar ao seu corpo sinais consistentes de segurança:</p>
+                    <h2>O Problema Não É Você.<br><span class="highlight">É o Seu Metabolismo Travado!</span></h2>
+                    <p>Quando seu metabolismo está "travado", seu corpo não consegue queimar gordura eficientemente, mesmo que você faça dieta e exercício. É como tentar dirigir um carro com o freio acionado.</p>
+                    <p>O <strong>Protocolo Destrava</strong> foi desenvolvido para reativar seu metabolismo, permitindo que seu corpo queime gordura de forma natural e eficiente.</p>
                     <ul class="ps-list">
-                        <li>Alimentação regular e estruturada</li>
-                        <li>Proteína em todas as refeições</li>
-                        <li>Treino de força mínimo e eficaz</li>
-                        <li>Sono e gestão de estresse</li>
-                        <li>Refeição livre semanal sem culpa</li>
+                        <li>Ativa o metabolismo em apenas 7 dias</li>
+                        <li>Funciona com comida de verdade, sem restrições</li>
+                        <li>Resultados visíveis em 21 dias</li>
+                        <li>Mantém os resultados para sempre</li>
                     </ul>
                 </div>
                 <div>
                     <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 40px; border-radius: 12px; color: white;">
                         <h3 style="font-size: 1.8rem; margin-bottom: 20px;">O que você vai conseguir:</h3>
-                        <ul class="ps-list" style="color: white;">
-                            <li>Sair do platô em 21-30 dias</li>
+                        <ul class="ps-list ps-list-white">
+                            <li>Sair do platô em 21 dias</li>
                             <li>Recuperar seu metabolismo</li>
                             <li>Perder peso sem restrição extrema</li>
                             <li>Manter o resultado a longo prazo</li>
@@ -1051,79 +1161,90 @@ fbq('track', 'PageView');
         </div>
     </section>
 
-    <!-- MODULES -->
-    <section class="modules">
+    <!-- RESULTS -->
+    <section class="results-section">
         <div class="container">
-            <h2 class="section-title">O que você vai aprender</h2>
-            <div class="modules-grid">
-                <div class="module-card">
-                    <div class="module-number">1</div>
-                    <h3>Diagnóstico e Mentalidade</h3>
-                    <p>Entenda por que seu corpo travou e desarme a culpa que sabota qualquer protocolo.</p>
+            <h2 class="section-title tight">Resultados Que Você Vai Conquistar</h2>
+            <p class="section-subtitle">Muito além de apenas emagrecer</p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">⚡</div>
+                    <h3>Mais Energia</h3>
+                    <p>Acorde com disposição e viva o dia com vitalidade.</p>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">2</div>
-                    <h3>Protocolo Alimentar</h3>
-                    <p>O método do prato simplificado. Sem contar calorias, sem decisões diárias.</p>
+                <div class="result-card">
+                    <div class="result-icon">💪</div>
+                    <h3>Corpo Definido</h3>
+                    <p>Músculos tonificados e uma silhueta que você sempre quis.</p>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">3</div>
-                    <h3>Reset de 21-30 Dias</h3>
-                    <p>Cronograma estruturado em 4 semanas com objetivos progressivos.</p>
+                <div class="result-card">
+                    <div class="result-icon">😊</div>
+                    <h3>Autoestima Elevada</h3>
+                    <p>Confiança para usar aquela roupa que estava guardada.</p>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">4</div>
-                    <h3>Treino Mínimo Eficaz</h3>
-                    <p>20-30 minutos, 3x por semana. Força que preserva seu metabolismo.</p>
+                <div class="result-card">
+                    <div class="result-icon">❤️</div>
+                    <h3>Saúde Plena</h3>
+                    <p>Colesterol, pressão e açúcar no sangue normalizados.</p>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">5</div>
-                    <h3>Anti-Sanfona</h3>
-                    <p>Como manter o resultado para sempre, sem voltar ao ciclo.</p>
+                <div class="result-card">
+                    <div class="result-icon">🧠</div>
+                    <h3>Clareza Mental</h3>
+                    <p>Foco, concentração e memória potencializados.</p>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">+</div>
-                    <h3>Bônus: Diário de Hábitos</h3>
-                    <p>Ferramenta prática para monitorar seu progresso dia a dia.</p>
+                <div class="result-card">
+                    <div class="result-icon">😴</div>
+                    <h3>Sono Profundo</h3>
+                    <p>Durma melhor e acorde restaurada.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">🔥</div>
+                    <h3>Metabolismo Ativado</h3>
+                    <p>Seu corpo volta a queimar gordura de forma eficiente, facilitando resultados duradouros.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">🍫</div>
+                    <h3>Menos Compulsão Alimentar</h3>
+                    <p>Reduza a vontade de comer doces e beliscar, mantendo o controle sem sofrimento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section class="benefits">
+    <!-- MODULES -->
+    <section class="modules">
         <div class="container">
-            <h2 class="section-title">Por que o Protocolo Destrava funciona</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Método Científico</h3>
-                    <p>Baseado em fisiologia metabólica e psicologia comportamental comprovada.</p>
+            <h2 class="section-title">O Que Você Vai Aprender</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-number">1</div>
+                    <h3>Descubra Por Que Seu Corpo Parou de Emagrecer</h3>
+                    <p>Entenda o que é a adaptação metabólica e por que dietas tradicionais fazem seu corpo economizar gordura em vez de queimá-la.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">📋</div>
-                    <h3>Estruturado</h3>
-                    <p>Cada semana tem um objetivo claro. Sem espaço para dúvidas ou indecisão.</p>
+                <div class="module-card">
+                    <div class="module-number">2</div>
+                    <h3>Reative Seu Metabolismo com a Alimentação Certa</h3>
+                    <p>Aprenda um protocolo alimentar simples que ajuda seu organismo a voltar a queimar gordura, sem contar calorias e sem dietas radicais.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">⏱️</div>
-                    <h3>Prazo Definido</h3>
-                    <p>21 a 30 dias. Você sabe exatamente quando vai começar a ver resultados.</p>
+                <div class="module-card">
+                    <div class="module-number">3</div>
+                    <h3>O Plano Completo de Reset Metabólico 21 Dias</h3>
+                    <p>Siga um passo a passo prático para destravar seu metabolismo e começar a emagrecer de forma consistente.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💪</div>
-                    <h3>Sem Restrição Extrema</h3>
-                    <p>Você come de verdade. Refeição livre semanal. Nenhum grupo alimentar eliminado.</p>
+                <div class="module-card">
+                    <div class="module-number">4</div>
+                    <h3>O Treino Inteligente Que Acelera a Queima de Gordura</h3>
+                    <p>Descubra exercícios rápidos (20 a 30 minutos) que preservam sua massa muscular e estimulam um metabolismo mais ativo.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔄</div>
-                    <h3>Resultado Permanente</h3>
-                    <p>Não é um protocolo temporário. É um sistema que você aprende a manter.</p>
+                <div class="module-card">
+                    <div class="module-number">5</div>
+                    <h3>Como Nunca Mais Cair no Efeito Sanfona</h3>
+                    <p>Aprenda estratégias simples para manter o peso conquistado sem viver de dieta e sem recuperar os quilos perdidos.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏠</div>
-                    <h3>Simples de Aplicar</h3>
-                    <p>Sem equipamentos caros, sem preparos complicados, sem decisões diárias.</p>
+                <div class="module-card">
+                    <div class="module-number">6</div>
+                    <h3>Como Transformar o Emagrecimento em um Novo Estilo de Vida</h3>
+                    <p>Você aprenderá hábitos práticos para manter seu metabolismo ativo, controlar a fome e continuar emagrecendo de forma natural, mesmo depois de concluir o protocolo.</p>
                 </div>
             </div>
         </div>
@@ -1238,30 +1359,13 @@ fbq('track', 'PageView');
                 <div class="offer-benefits">
                     <h4>✓ O que você vai receber:</h4>
                     <ul class="benefit-list">
-                        <li>
-                            <span>5 Módulos Completos do Protocolo</span>
-                            <span class="benefit-value">R$ 67,90</span>
-                        </li>
-                        <li>
-                            <span>Bônus: Diagnóstico do Platô</span>
-                            <span class="benefit-value">R$ 15,00</span>
-                        </li>
-                        <li>
-                            <span>Bônus: Cardápio Anti-Sanfona 7 Dias</span>
-                            <span class="benefit-value">R$ 15,00</span>
-                        </li>
-                        <li>
-                            <span>Método do Prato Simplificado</span>
-                            <span class="benefit-value uncalculable">Incluso</span>
-                        </li>
-                        <li>
-                            <span>Treino Mínimo Eficaz</span>
-                            <span class="benefit-value uncalculable">Incluso</span>
-                        </li>
-                        <li>
-                            <span>Diário de Hábitos + Ferramentas</span>
-                            <span class="benefit-value uncalculable">Incluso</span>
-                        </li>
+                        <li><span>Protocolo Destrava</span></li>
+                        <li><span>Diagnóstico do Platô</span></li>
+                        <li><span>Cardápio Anti Sanfona 7 Dias</span></li>
+                        <li><span>Treinos Metabólicos 20min</span></li>
+                        <li><span>Suporte Exclusivo</span></li>
+                        <li><span>Acesso Vitalício</span></li>
+                        <li><span>Garantia 7 Dias</span></li>
                     </ul>
                 </div>
 
@@ -1291,6 +1395,11 @@ fbq('track', 'PageView');
                 </div>
 
                 <a href="https://pay.kiwify.com.br/cvstncU" class="cta-button-large" style="background: #10b981; color: white; width: 100%; margin-top: 20px; display:block; text-align:center; text-decoration:none; box-sizing:border-box;">Sim, Quero Destravar Meu Metabolismo Agora →</a>
+
+                <div class="post-cta-guarantee">
+                    <strong>✓ GARANTIA DE 7 DIAS</strong>
+                    <p>Se não gostar, devolvemos 100% do seu dinheiro, sem perguntas. Risco zero para você!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1298,9 +1407,9 @@ fbq('track', 'PageView');
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Pronto para sair do platô?</h2>
-            <p>Comece agora e veja seu metabolismo destravar em 21-30 dias.</p>
-            <a href="https://pay.kiwify.com.br/cvstncU" class="cta-button-large" style="display:inline-block;text-decoration:none;">Quero Começar Agora Mesmo →</a>
+            <h2>Cada Dia Que Você Adia é Mais Um Dia com o Metabolismo Travado</h2>
+            <p>Comece hoje o protocolo de 21 dias e descubra como centenas de mulheres estão retomando o controle do próprio corpo sem dietas malucas.</p>
+            <a href="https://pay.kiwify.com.br/cvstncU" class="cta-button-large" style="display:inline-block;text-decoration:none;">🔥 Quero Destravar Meu Metabolismo Agora</a>
         </div>
     </section>
 
